@@ -2,6 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@keyframes randomMove {
+  0% { transform: translate(2rem, -2rem); }
+  25% { transform: translate(3rem, -3rem); }
+  50% { transform: translate(1rem, 1rem); }
+  75% { transform: translate(-2rem, 2rem); }
+  100% { transform: translate(2rem, -2rem); }
+}
+@keyframes moveAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, 50px);
+  }
+  50% {
+    transform: translate(100px, -50px);
+  }
+  75% {
+    transform: translate(-50px, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes rotatePlanet {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.presev{
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden;
+}
+
+
+
+.text-border-space1 {
+  text-shadow: 
+          var(--tw-text-border-width,2px) var(--tw-text-border-width,2px) 0 #97266d,
+          calc(var(--tw-text-border-width, 1px) * -1) calc(var(--tw-text-border-width, 1px) * -1) 0 #97266d,
+          var(--tw-text-border-width,2px) calc(var(--tw-text-border-width, 2px) * -1) 0 #97266d,
+          calc(var(--tw-text-border-width, 1px) * -1) var(--tw-text-border-width,1px) #97266d;
+        
+}
+.animate-spiral {
+  animation: rotatePlanet 10s linear infinite;
+}
+
+.animate-random {
+  animation: moveAnimation 10s linear infinite;
+
+}
+.animate-random1 {
+  animation: moveAnimation 20s linear infinite;
+}
+
+.animate-random2 {
+  animation: moveAnimation 30s linear infinite;
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
